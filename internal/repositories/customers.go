@@ -9,6 +9,7 @@ import (
 )
 
 const DEFAULT_LIMIT = 10
+const DEFAULT_OFFSET = 0
 
 type CustomersRepositoryInterface interface {
 	GetAllByFilters(filters map[string]interface{}) ([]models.Customer, error)
@@ -43,10 +44,10 @@ func (rep *CustomersRepository) GetAllByFilters(filters map[string]interface{}) 
 	if limit, ok := filters["limit"]; ok {
 		paramsList["limit"] = limit
 	} else {
-		paramsList["limit"] = 10
+		paramsList["limit"] = DEFAULT_LIMIT
 	}
 
-	if offset, ok := filters["limit"]; ok {
+	if offset, ok := filters["offset"]; ok {
 		queryString = queryString + " OFFSET :offset"
 		paramsList["offset"] = offset
 	}

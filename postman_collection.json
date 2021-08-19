@@ -11,7 +11,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/api/customer/all/?searchString=&limit=10&offset=1",
+					"raw": "localhost:8080/api/customer/all/?searchString=One&limit=10&offset=0",
 					"host": [
 						"localhost"
 					],
@@ -25,7 +25,7 @@
 					"query": [
 						{
 							"key": "searchString",
-							"value": ""
+							"value": "One"
 						},
 						{
 							"key": "limit",
@@ -33,7 +33,7 @@
 						},
 						{
 							"key": "offset",
-							"value": "1"
+							"value": "0"
 						}
 					]
 				}
@@ -46,7 +46,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/api/customer/1/",
+					"raw": "localhost:8080/api/customer/2/",
 					"host": [
 						"localhost"
 					],
@@ -54,7 +54,7 @@
 					"path": [
 						"api",
 						"customer",
-						"1",
+						"2",
 						""
 					]
 				}
@@ -75,7 +75,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"firstName\": \"Nata\",\n    \"lastName\": \"Sarha\",\n    \"gender\": \"Female\",\n    \"email\": \"natalia.w@mail.ru\",\n    \"birthDate\": \"2012-02-04\",\n    \"address\": \"address123\"\n}",
+					"raw": "{\n    \"firstName\": \"TestFirstName\",\n    \"lastName\": \"TestLastName\",\n    \"gender\": \"Female\",\n    \"email\": \"test@mail.ru\",\n    \"birthDate\": \"2001-02-02\",\n    \"address\": \"address\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -111,7 +111,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"firstName\": \"TestFirstName\",\n    \"lastName\": \"TestLastName\",\n    \"gender\": \"Female\",\n    \"email\": \"test@mail.ru\",\n    \"birthDate\": \"2000-02-02\",\n    \"address\": \"address123\"\n}",
+					"raw": "{\n    \"firstName\": \"TestFirstNameTESTUPDATE\",\n    \"lastName\": \"TestLastName\",\n    \"gender\": \"Female\",\n    \"email\": \"test@mail.ru\",\n    \"birthDate\": \"2000-02-02\",\n    \"address\": \"address123\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -119,7 +119,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/api/customer/4/",
+					"raw": "localhost:8080/api/customer/2/",
 					"host": [
 						"localhost"
 					],
@@ -127,7 +127,7 @@
 					"path": [
 						"api",
 						"customer",
-						"4",
+						"2",
 						""
 					]
 				}

@@ -45,7 +45,7 @@ func (ch *CustomersHandler) getAll(writer http.ResponseWriter, request *http.Req
 	offset := params.Get("offset")
 	intOffset, err := strconv.ParseInt(offset, 10, 0)
 	if err != nil {
-		intOffset = 10
+		intOffset = repositories.DEFAULT_OFFSET
 		err = nil
 	}
 
