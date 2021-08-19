@@ -9,8 +9,8 @@ CREATE TABLE IF NOT EXISTS customers (
 );
 
 -- FASTEST AND WORST WAY TO FILL DB
-INSERT INTO customers(first_name, last_name, birth_date, gender, email)
+INSERT INTO customers(first_name, last_name, birth_date, gender, email, address)
 VALUES ('TestFirstNameOne', 'TestLastNameOne', TIMESTAMP '2001-10-22 10:23:54.000000', 'Male', 'testOne@mail.ru', 'addressOne');
 
-INSERT INTO customers(first_name, last_name, birth_date, gender, email)
+INSERT INTO customers(first_name, last_name, birth_date, gender, email, address)
 VALUES ('TestFirstNameTwo', 'TestLastNameTwo', TIMESTAMP '2001-10-23 10:23:54.000000', 'Female', 'testTwo@mail.ru', 'addressTwo');
