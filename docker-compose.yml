@@ -1,0 +1,32 @@
+version: "3.7"
+services:
+  postgres_db:
+    image: postgres:13.4
+    restart: always
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB_NAME}
+    ports:
+      - "5433:${POSTGRES_PORT}"
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file: .env
+    depends_on:
+      - postgres_db
+    networks:
+      - default
+    ports:
+      - "8080:8080"
+
+  migrate:
+    image: migrate/migrate
+    volumes:
+      - ./migrations:/migrations
+    command:
+      [ "-path", "/migrations", "-database",  "postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB_NAME}?sslmode=disable", "up" ]
+    depends_on:
+      - postgres_db

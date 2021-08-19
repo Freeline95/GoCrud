@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>CRUD</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <script src="/static/js/main.js"></script>
+    <link rel="stylesheet" href="/static/assets/main.css">
+
+    <script>
+        $(document).ready(function() {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+</head>
+<body>
+<div class="container">
+    <h1>HTTP AJAX METHODS</h1>
+    <button id="newTutBtn" class="btn btn-primary btn-block">New Tutorial</button><br><br>
+    <form id="newForm" style="display: none;">
+        <div class="form-group row">
+            <label for="tutNum" class="col-sm-2 col-form-label">Tutorial Number</label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control" id="tutNum" placeholder="Tutorial Number">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="title" class="col-sm-2 col-form-label">Title</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="title" placeholder="Title">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="author" class="col-sm-2 col-form-label">Author</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="author" placeholder="Author">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="type" class="col-sm-2 col-form-label">Type</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="type" placeholder="Tutorial Type">
+            </div>
+        </div>
+        <button id="submitTutorial" type="submit" class="btn btn-primary">Add Tutorial</button>
+    </form>
+
+    <div id="updateFormDiv">
+        <form id="updateForm">
+            <div class="form-group row">
+                <div class="col-sm-10">
+                    <input type="hidden" class="form-control" id="tutId">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="updateNum" class="col-sm-2 col-form-label">Tutorial Number</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" id="updateNum" placeholder="Tutorial Number">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="updateTitle" class="col-sm-2 col-form-label">Title</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="updateTitle" placeholder="Title">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="updateAuthor" class="col-sm-2 col-form-label">Author</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="updateAuthor" placeholder="Author">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="updateType" class="col-sm-2 col-form-label">Type</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="updateType" placeholder="Tutorial Type">
+                </div>
+            </div>
+            <button id="updateTutorial" type="submit" class="btn btn-primary">Update Tutorial</button>
+        </form>
+    </div>
+    <table id="tutorialsTable" class="table table-bordered table-hover">
+        <thead>
+        <tr><th>Tutorial Number</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Tutorial Type</th>
+            <th>DB ID</th>
+            <th>Controls</th>
+        </tr></thead>
+        <tbody id="tutorialsBody"></tbody>
+    </table>
+</div>
+
+</body>
+</html>
