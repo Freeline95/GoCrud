@@ -5,12 +5,19 @@ import (
 	"github.com/Freeline95/GoCrud/internal/repositories"
 )
 
+type CustomersServiceInterface interface {
+	GetCustomersByFilters (filters map[string]interface{}) ([]models.Customer, error)
+	GetCustomer (id uint) (models.Customer, error)
+	Create (customer *models.Customer) error
+	Update (customer *models.Customer) error
+}
+
 type CustomersService struct {
 	repository repositories.CustomersRepositoryInterface
 }
 
-func NewCustomersService (repository repositories.CustomersRepositoryInterface) CustomersService {
-	return CustomersService{
+func NewCustomersService (repository repositories.CustomersRepositoryInterface) CustomersServiceInterface {
+	return &CustomersService{
 		repository: repository,
 	}
 }

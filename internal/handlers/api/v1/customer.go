@@ -15,12 +15,12 @@ import (
 )
 
 type CustomersHandler struct {
-	service services.CustomersService
+	service services.CustomersServiceInterface
 	validator *validator.Validate
 	render *render.Render
 }
 
-func NewCustomersHandler(service services.CustomersService, validator *validator.Validate, render *render.Render) CustomersHandler {
+func NewCustomersHandler(service services.CustomersServiceInterface, validator *validator.Validate, render *render.Render) CustomersHandler {
 	return CustomersHandler{
 		service: service,
 		validator: validator,
